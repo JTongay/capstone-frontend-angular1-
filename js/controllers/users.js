@@ -17,8 +17,10 @@ app.controller('users', ['$scope','$http', '$state', function($scope, $http,$sta
     }
   }
 
-  $scope.view.addUser = function(name, pass, email){
-    console.log(request.data);
+  $scope.view.addUser = function(email, pass, name){
+    console.log(name);
+    console.log(pass);
+    console.log(email);
     $http.post(request.url, {username: name, password_digest: pass, email: email}).then((res)=>{
       console.log(res)
     })
